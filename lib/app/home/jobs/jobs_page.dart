@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker_app/app/home/job_entries/job_entries_page.dart';
@@ -14,27 +15,7 @@ import '../models/job.dart';
 import 'job_list_tile.dart';
 
 class JobsPage extends StatelessWidget {
-  Future<void> _signOut(BuildContext context) async {
-    try {
-      final auth = Provider.of<AuthBase>(context, listen: false);
-      await auth.signOut();
-    } catch (e) {
-      print(e.toString());
-    }
-  }
-
-  Future<void> _confirmSignOut(BuildContext context) async {
-    final didRequestSignOut = await showAlertDialog(
-      context,
-      title: 'Logout',
-      content: 'Are you sure that you want to logout?',
-      defaultActionText: 'Logout',
-      canceldActionText: 'Cancle',
-    );
-    if (didRequestSignOut == true) {
-      _signOut(context);
-    }
-  }
+  
 
   Future<void> _delete(BuildContext context, Job job) async {
     try {
@@ -53,29 +34,25 @@ class JobsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Jobs'),
+        centerTitle: false,
+        title: const Text(
+          'Jobs',
+          style: TextStyle(fontSize: 19),
+        ),
         backgroundColor: const Color.fromARGB(255, 67, 97, 101),
         actions: <Widget>[
-          TextButton(
-            onPressed: () => _confirmSignOut(context),
-            child: const Text(
-              'Logout',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-              ),
-            ),
-          )
+          IconButton(
+              icon: const Icon(Icons.add, color: Colors.white),
+              onPressed: () => EditJobPage.show(
+                    context,
+                    database: Provider.of<Database>(
+                      context,
+                      listen: false,
+                    ),
+                  )),
         ],
       ),
       body: _buildContents(context),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color.fromARGB(255, 67, 97, 101),
-        child: const Icon(
-          Icons.add,
-        ),
-        onPressed: () => EditJobPage.show(context, database: Provider.of<Database>(context, listen: false)),
-      ),
     );
   }
 
