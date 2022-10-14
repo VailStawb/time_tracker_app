@@ -1,4 +1,4 @@
-# time_tracker_app
+# time_tracker_course_app
 
 A new Flutter project.
 
