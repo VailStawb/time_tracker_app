@@ -19,12 +19,12 @@ class ListItemsBuilder<T> extends StatelessWidget {
         return const EmptyContent();
       }
     } else if (snapshot.hasError) {
-      return const EmptyContent(
+      return EmptyContent(
         title: 'Something went wrong',
-        message: 'Can\'t load items right now',
+        message: 'Can\'t load items right now, ${snapshot.error}',
       );
     }
-    return Center(child: CircularProgressIndicator());
+    return const Center(child: CircularProgressIndicator());
   }
 
   Widget _buildList(List<T> items) {
