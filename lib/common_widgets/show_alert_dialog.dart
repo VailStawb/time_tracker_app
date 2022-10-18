@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 Future<bool> showAlertDialog(
   BuildContext context, {
@@ -9,6 +9,10 @@ Future<bool> showAlertDialog(
   String canceldActionText,
   @required String defaultActionText,
 }) {
+
+  // Here i don't want to use Android's design of showing dialog window to user, 
+  //but in the future this code can be useful. So i just left it here.
+
   // if (!Platform.isIOS) {
   //   return showDialog(
   //     context: context,

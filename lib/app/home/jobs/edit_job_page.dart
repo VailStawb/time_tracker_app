@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:time_tracker_app/common_widgets/show_alert_dialog.dart';
 import 'package:time_tracker_app/common_widgets/show_exception_alert_dialog.dart';
 import '../../../services/database.dart';
@@ -134,7 +133,7 @@ class _EditJobPageState extends State<EditJobPage> {
         validator: (value) => value.isNotEmpty ? null : 'Name can\'t be empty',
       ),
       TextFormField(
-        cursorRadius: Radius.circular(20),
+        cursorRadius: const Radius.circular(20),
         decoration: const InputDecoration(labelText: 'Rate per hour'),
         initialValue: _ratePerHour != null ? '$_ratePerHour' : null,
         keyboardType: const TextInputType.numberWithOptions(

@@ -8,7 +8,7 @@ import '../../services/auth.dart';
 import 'email_sign_in_model.dart';
 
 class EmailSignInFormBlocBased extends StatefulWidget {
-  EmailSignInFormBlocBased({Key key, @required this.bloc}) : super(key: key);
+  const EmailSignInFormBlocBased({Key key, @required this.bloc}) : super(key: key);
 
   final EmailSignInBloc bloc;
 

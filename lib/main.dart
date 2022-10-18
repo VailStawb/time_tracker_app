@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             centerTitle: true,
           ),
         ),
-        home: LandingPage(),
+        home: const LandingPage(),
       ),
     );
   }

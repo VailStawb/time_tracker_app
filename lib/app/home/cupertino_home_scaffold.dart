@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:time_tracker_app/app/home/jobs/jobs_page.dart';
 import 'tab_item.dart';
 
 class CupertinoHomeScaffold extends StatelessWidget {

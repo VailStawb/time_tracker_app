@@ -1,21 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker_app/app/home/job_entries/job_entries_page.dart';
 import 'package:time_tracker_app/app/home/jobs/edit_job_page.dart';
-import 'package:time_tracker_app/app/home/jobs/empty_content.dart';
 import 'package:time_tracker_app/app/home/jobs/list_items_builder.dart';
-import 'package:time_tracker_app/common_widgets/show_alert_dialog.dart';
 import 'package:time_tracker_app/common_widgets/show_exception_alert_dialog.dart';
 import 'package:time_tracker_app/services/database.dart';
-
-import '../../../services/auth.dart';
 import '../models/job.dart';
 import 'job_list_tile.dart';
 
 class JobsPage extends StatelessWidget {
-  
+  const JobsPage({Key key}) : super(key: key);
 
   Future<void> _delete(BuildContext context, Job job) async {
     try {

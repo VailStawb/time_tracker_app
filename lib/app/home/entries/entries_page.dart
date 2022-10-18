@@ -6,11 +6,13 @@ import 'package:time_tracker_app/app/home/jobs/list_items_builder.dart';
 import 'package:time_tracker_app/services/database.dart';
 
 class EntriesPage extends StatelessWidget {
+  const EntriesPage({Key key}) : super(key: key);
+
   static Widget create(BuildContext context) {
     final database = Provider.of<Database>(context, listen: false);
     return Provider<EntriesBloc>(
       create: (_) => EntriesBloc(database: database),
-      child: EntriesPage(),
+      child: const EntriesPage(),
     );
   }
 
@@ -18,7 +20,7 @@ class EntriesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Entries'),
+        title: const Text('Entries'),
         elevation: 2.0,
       ),
       body: _buildContents(context),
@@ -30,7 +32,6 @@ class EntriesPage extends StatelessWidget {
     return StreamBuilder<List<EntriesListTileModel>>(
       stream: bloc.entriesTileModelStream,
       builder: (context, snapshot) {
-
         return ListItemsBuilder<EntriesListTileModel>(
           snapshot: snapshot,
           itemBuilder: (context, model) => EntriesListTile(model: model),

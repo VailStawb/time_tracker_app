@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:time_tracker_app/app/sign_in/email_sign_in_form_stateful.dart';
 import 'package:time_tracker_app/app/sign_in/email_sign_in_model.dart';
 import '../../services/auth.dart';
 

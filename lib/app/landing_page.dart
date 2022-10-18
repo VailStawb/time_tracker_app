@@ -2,13 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker_app/app/home/home_page.dart';
-import 'package:time_tracker_app/app/home/jobs/jobs_page.dart';
 import 'package:time_tracker_app/app/sign_in/sign_in_page.dart';
 import 'package:time_tracker_app/services/auth.dart';
 
 import '../services/database.dart';
 
 class LandingPage extends StatelessWidget {
+  const LandingPage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final auth = Provider.of<AuthBase>(context, listen: false);
@@ -21,7 +22,7 @@ class LandingPage extends StatelessWidget {
             return SignInPage.create(context);
           }
           return Provider<Database>(
-            child: HomePage(),
+            child: const HomePage(),
             create: (_) => FirestoreDatabase(uid: user.uid),
           );
         }

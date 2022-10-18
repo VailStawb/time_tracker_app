@@ -19,13 +19,13 @@ class EntryListItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         child: Row(
           children: <Widget>[
             Expanded(
               child: _buildContents(context),
             ),
-            Icon(Icons.chevron_right, color: Colors.grey),
+            const Icon(Icons.chevron_right, color: Colors.grey),
           ],
         ),
       ),
@@ -46,9 +46,9 @@ class EntryListItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Row(children: <Widget>[
-          Text(dayOfWeek, style: TextStyle(fontSize: 18.0, color: Colors.grey)),
-          SizedBox(width: 15.0),
-          Text(startDate, style: TextStyle(fontSize: 18.0)),
+          Text(dayOfWeek, style: const TextStyle(fontSize: 18.0, color: Colors.grey)),
+          const SizedBox(width: 15.0),
+          Text(startDate, style: const TextStyle(fontSize: 18.0)),
           if (job.ratePerHour > 0.0) ...<Widget>[
             Expanded(child: Container()),
             Text(
@@ -58,14 +58,14 @@ class EntryListItem extends StatelessWidget {
           ],
         ]),
         Row(children: <Widget>[
-          Text('$startTime - $endTime', style: TextStyle(fontSize: 16.0)),
+          Text('$startTime - $endTime', style: const TextStyle(fontSize: 16.0)),
           Expanded(child: Container()),
-          Text(durationFormatted, style: TextStyle(fontSize: 16.0)),
+          Text(durationFormatted, style: const TextStyle(fontSize: 16.0)),
         ]),
         if (entry.comment.isNotEmpty)
           Text(
             entry.comment,
-            style: TextStyle(fontSize: 12.0),
+            style: const TextStyle(fontSize: 12.0),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
@@ -92,7 +92,7 @@ class DismissibleEntryListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dismissible(
-      background: Container(color: Color.fromARGB(255, 233, 151, 151) ),
+      background: Container(color: const Color.fromARGB(255, 233, 151, 151) ),
       key: key,
       direction: DismissDirection.endToStart,
       onDismissed: (direction) => onDismissed(),
