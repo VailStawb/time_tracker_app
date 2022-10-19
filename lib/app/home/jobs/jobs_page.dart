@@ -29,7 +29,7 @@ class JobsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
+        centerTitle: true,
         title: const Text(
           'Jobs',
           style: TextStyle(fontSize: 19),
