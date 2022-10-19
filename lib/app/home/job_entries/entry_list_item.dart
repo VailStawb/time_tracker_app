@@ -76,14 +76,13 @@ class EntryListItem extends StatelessWidget {
 
 class DismissibleEntryListItem extends StatelessWidget {
   const DismissibleEntryListItem({
-    this.key,
     this.entry,
     this.job,
     this.onDismissed,
     this.onTap,
-  });
+    Key key,
+  }) : super(key: key);
 
-  final Key key;
   final Entry entry;
   final Job job;
   final VoidCallback onDismissed;
