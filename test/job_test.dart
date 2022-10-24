@@ -13,9 +13,30 @@ void main() {
         'name': 'Blogging',
         'ratePerHour': 10,
       }, 'abc');
-      expect(job.name, 'Blogging');
-      expect(job.ratePerHour, 10);
-      expect(job.id, 'abc');
+      // expect(job.name, 'Blogging');
+      // expect(job.ratePerHour, 10);
+      // expect(job.id, 'abc');
+      expect(job, Job(name: 'Blogging', id: 'abc', ratePerHour: 10));
+    });
+
+    test('missing name', () {
+      final job = Job.fromMap({
+        'ratePerHour': 10,
+      }, 'abc');
+      // expect(job.name, 'Blogging');
+      // expect(job.ratePerHour, 10);
+      // expect(job.id, 'abc');
+      expect(job,null);
+    });
+  });
+
+  group('toMap', (){
+    test('valid name, ratePerHour', (){
+      final job = Job(name: 'Blogging', ratePerHour: 10, id: 'abc');
+      expect(job.toMap(), {
+        'name': 'Blogging',
+        'ratePerHour' : 10,        
+      });
     });
   });
 }
