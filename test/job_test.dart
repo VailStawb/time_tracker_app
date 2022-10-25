@@ -23,9 +23,6 @@ void main() {
       final job = Job.fromMap({
         'ratePerHour': 10,
       }, 'abc');
-      // expect(job.name, 'Blogging');
-      // expect(job.ratePerHour, 10);
-      // expect(job.id, 'abc');
       expect(job,null);
     });
   });
