@@ -5,6 +5,7 @@ This is the first application made by me with a course "Flutter & Firebase: Buil
 It's a time tracker, where you can track all your working hours and sum up all money you've made from it.
 
 The app has:
+
     -authentication with email, google and anonymous 
     
     -possibility to log in and log out
