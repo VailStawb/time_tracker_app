@@ -58,14 +58,6 @@ class SignInPage extends StatelessWidget {
     }
   }
 
-  Future<void> _signInWithFacebook(BuildContext context) async {
-    try {
-      await manager.signInWIthFacebook();
-    } on Exception catch (e) {
-      _showSignInError(context, e);
-    }
-  }
-
   void _signInWithEmail(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
@@ -117,16 +109,6 @@ class SignInPage extends StatelessWidget {
             onPressed: isLoading ? null : () => _signInWithGoogle(context),
             text: 'Sign in with Google',
             textColor: Colors.black87,
-          ),
-          const SizedBox(
-            height: 8.0,
-          ),
-          SocialSignInButton(
-            assetName: 'images/facebook-logo.png',
-            color: const Color(0xFF334D92),
-            onPressed: isLoading ? null : () => _signInWithFacebook(context),
-            text: 'Sign in with Facebook',
-            textColor: Colors.white,
           ),
           const SizedBox(
             height: 8.0,
